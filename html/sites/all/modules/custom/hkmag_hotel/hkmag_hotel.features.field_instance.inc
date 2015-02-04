@@ -61,6 +61,47 @@ function hkmag_hotel_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-hotel-field_area_hk'
+  $field_instances['node-hotel-field_area_hk'] = array(
+    'bundle' => 'hotel',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 30,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_area_hk',
+    'label' => 'Area',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 15,
+    ),
+  );
+
   // Exported field_instance: 'node-hotel-field_area_ma'
   $field_instances['node-hotel-field_area_ma'] = array(
     'bundle' => 'hotel',
@@ -101,7 +142,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 34,
+      'weight' => 32,
     ),
   );
 
@@ -192,7 +233,51 @@ function hkmag_hotel_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 14,
+      'weight' => 19,
+    ),
+  );
+
+  // Exported field_instance: 'node-hotel-field_country'
+  $field_instances['node-hotel-field_country'] = array(
+    'bundle' => 'hotel',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 27,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_country',
+    'label' => 'Country',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'options',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'options_select',
+      'weight' => 12,
     ),
   );
 
@@ -236,7 +321,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 21,
     ),
   );
 
@@ -280,7 +365,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 22,
     ),
   );
 
@@ -324,7 +409,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 18,
     ),
   );
 
@@ -368,7 +453,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 18,
+      'weight' => 23,
     ),
   );
 
@@ -412,7 +497,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 20,
     ),
   );
 
@@ -456,7 +541,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 17,
     ),
   );
 
@@ -500,7 +585,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 16,
     ),
   );
 
@@ -588,7 +673,7 @@ function hkmag_hotel_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 20,
+      'weight' => 25,
     ),
   );
 
@@ -689,7 +774,7 @@ function hkmag_hotel_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
-      'weight' => 22,
+      'weight' => 27,
     ),
   );
 
@@ -737,6 +822,50 @@ function hkmag_hotel_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-hotel-field_place_cities'
+  $field_instances['node-hotel-field_place_cities'] = array(
+    'bundle' => 'hotel',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 26,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_place_cities',
+    'label' => 'Place Cities',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-hotel-field_postal_code'
   $field_instances['node-hotel-field_postal_code'] = array(
     'bundle' => 'hotel',
@@ -777,7 +906,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -822,7 +951,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 31,
+      'weight' => 29,
     ),
   );
 
@@ -870,6 +999,50 @@ function hkmag_hotel_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-hotel-field_st_cross'
+  $field_instances['node-hotel-field_st_cross'] = array(
+    'bundle' => 'hotel',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 29,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_st_cross',
+    'label' => 'Cross Street',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 14,
+    ),
+  );
+
   // Exported field_instance: 'node-hotel-field_st_cross_ma'
   $field_instances['node-hotel-field_st_cross_ma'] = array(
     'bundle' => 'hotel',
@@ -910,7 +1083,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 32,
+      'weight' => 30,
     ),
   );
 
@@ -958,6 +1131,50 @@ function hkmag_hotel_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-hotel-field_st_road_hk'
+  $field_instances['node-hotel-field_st_road_hk'] = array(
+    'bundle' => 'hotel',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 28,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_st_road_hk',
+    'label' => 'Street Name',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-hotel-field_st_road_ma'
   $field_instances['node-hotel-field_st_road_ma'] = array(
     'bundle' => 'hotel',
@@ -998,7 +1215,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 33,
+      'weight' => 31,
     ),
   );
 
@@ -1042,7 +1259,7 @@ function hkmag_hotel_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 21,
+      'weight' => 26,
     ),
   );
 
@@ -1186,15 +1403,18 @@ function hkmag_hotel_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 19,
+      'weight' => 24,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Area');
   t('Body');
   t('Building');
   t('Closed');
+  t('Country');
+  t('Cross Street');
   t('Editorial Contact Email');
   t('Editorial Contact Mobile');
   t('Editorial Contact Name');
@@ -1209,12 +1429,14 @@ function hkmag_hotel_field_default_field_instances() {
   t('Macau Street Name');
   t('Open Since');
   t('Phone Number');
+  t('Place Cities');
   t('Postal code');
   t('Related Hotel');
   t('Room/Unit');
   t('Short Review');
   t('Standfirst');
   t('Star Rating');
+  t('Street Name');
   t('Street Number');
   t('Website');
   t('Where Description');

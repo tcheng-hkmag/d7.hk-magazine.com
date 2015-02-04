@@ -55,6 +55,29 @@ function hkmag_vocab_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'hk_streets' => array(
+      'name' => 'HK Streets',
+      'machine_name' => 'hk_streets',
+      'description' => 'HK Streets',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'macau_area' => array(
       'name' => 'Macau Area',
       'machine_name' => 'macau_area',

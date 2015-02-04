@@ -47,6 +47,7 @@ function hkmag_migrate_flush_caches() {
 //   _devblog_migrate_files($common_arguments);
   _hkmag_migrate_migrate_term_country($common_arguments);
   _hkmag_migrate_migrate_term_hk_area($common_arguments);
+  _hkmag_migrate_migrate_term_place_cities($common_arguments);
   _hkmag_migrate_migrate_term_macau_street($common_arguments);
   _hkmag_migrate_migrate_term_macau_area($common_arguments);
   
@@ -75,6 +76,18 @@ function _hkmag_migrate_migrate_term_hk_area($common_arguments) {
       'machine_name' => 'HkMagTermHkArea',
       'source_vocabulary' => '181', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
       'destination_vocabulary' => 'hk_area',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_term_place_cities($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of hk area terms from Drupal 6'),
+      'machine_name' => 'HkMagTermPlaceCities',
+      'source_vocabulary' => '160', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'destination_vocabulary' => 'place_cities',
   );
   // First argument is the migration class name
   Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],

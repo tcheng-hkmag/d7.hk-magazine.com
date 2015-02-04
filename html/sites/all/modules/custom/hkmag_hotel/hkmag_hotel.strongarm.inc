@@ -68,10 +68,10 @@ function hkmag_hotel_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
-          'weight' => '30',
+          'weight' => '28',
         ),
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
       ),
       'display' => array(),
