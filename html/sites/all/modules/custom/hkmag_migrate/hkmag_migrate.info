@@ -1,0 +1,16 @@
+name = HK Mag Migration
+description = HK Mag Migration
+core = 7.x
+package = HK Mag
+version = 7.x-1.0
+project = hkmag_vocab
+dependencies[] = migrate
+dependencies[] = taxonomy
+dependencies[] = image
+dependencies[] = comment
+dependencies[] = migrate
+dependencies[] = list
+dependencies[] = number
+
+files[] = hkmag_migrate.role.inc
+files[] = hkmag_migrate.node.inc

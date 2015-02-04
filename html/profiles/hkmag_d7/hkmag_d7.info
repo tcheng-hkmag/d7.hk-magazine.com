@@ -1,0 +1,76 @@
+name = HK Mag D7
+description = Install with commonly used features pre-configured.
+version = VERSION
+core = 7.x
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+;dependencies[] = dashboard
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = toolbar
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+
+// HK mag required
+dependencies[] = ctools
+dependencies[] = strongarm
+dependencies[] = date_api
+dependencies[] = date
+;dependencies[] = views
+;dependencies[] = views_ui
+dependencies[] = migrate
+dependencies[] = migrate_ui
+dependencies[] = migrate_d2d
+dependencies[] = migrate_d2d_ui
+dependencies[] = migrate_webform
+dependencies[] = webform
+dependencies[] = features
+dependencies[] = votingapi
+dependencies[] = fivestar
+dependencies[] = references
+dependencies[] = node_reference
+dependencies[] = location
+dependencies[] = location_cck
+dependencies[] = field_group
+
+; Required modules (Contrib) from Spark
+dependencies[] = breakpoints
+dependencies[] = entity
+dependencies[] = jquery_update
+dependencies[] = json2
+dependencies[] = libraries
+dependencies[] = module_filter
+dependencies[] = page_manager
+dependencies[] = panels
+dependencies[] = panels_ipe
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = simplified_menu_admin
+
+; Required projects (Sparkish)
+dependencies[] = ckeditor
+dependencies[] = quickedit
+dependencies[] = gridbuilder
+dependencies[] = layout
+dependencies[] = navbar
+dependencies[] = responsive_preview
+dependencies[] = spark_demo
+
+
+; Information added by Drupal.org packaging script on 2014-11-19
+version = "7.34"
+project = "drupal"
+datestamp = "1416429488"
+

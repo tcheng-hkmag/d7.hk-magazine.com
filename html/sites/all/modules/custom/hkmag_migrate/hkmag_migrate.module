@@ -1,0 +1,166 @@
+<?php
+
+/**  
+ * Implements hook_migrate_api().  
+ */ 
+// function hkmag_migrate_migrate_api() {   
+//   $api = array(     
+//     'api' => 2,
+//     'groups' => array(
+//         'hk_mag' => array(
+//             'title' => t('HK Mag'),
+//         ),
+//     ),
+// //     'migrations' => array(
+// //         'HkmagRole' => array(
+// //             'class_name' => 'HkmagRoleMigration',
+// //             'group_name' => 'hk_mag',
+// //         ),
+// //     ),
+//   );
+ 
+//   return $api;
+// }
+
+function hkmag_migrate_flush_caches() {
+  // Specify the DB connection and the source Drupal version.
+  $common_arguments = array(
+      'source_connection' => 'legacy',
+      'source_version' => 6,
+      'source_database' => array(
+        'driver' => 'mysql',
+        'database' => 'local_hkmag',
+        'username' => 'local_hkmag', // Ideally this user has readonly access
+        // Best practice: use a variable (defined by setting $conf in settings.php, or
+        // with drush vset) for the password rather than exposing it in the code.
+        'password' => 'local_hkmag',
+        'host' => 'localhost',
+        'prefix' => '',
+      ),
+
+  );
+
+  // Register migrations.
+//   _devblog_migrate_article($common_arguments);
+//   _devblog_migrate_article_tags($common_arguments);
+//   _devblog_migrate_users($common_arguments);
+//   _devblog_migrate_files($common_arguments);
+  _hkmag_migrate_migrate_term_country($common_arguments);
+  _hkmag_migrate_migrate_term_hk_area($common_arguments);
+  _hkmag_migrate_migrate_term_macau_street($common_arguments);
+  _hkmag_migrate_migrate_term_macau_area($common_arguments);
+  
+  _hkmag_migrate_migrate_role($common_arguments);
+  _hkmag_migrate_migrate_user($common_arguments);
+  
+  _hkmag_migrate_migrate_node_hotel($common_arguments);
+  
+}
+
+function _hkmag_migrate_migrate_term_country($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of country terms from Drupal 6'),
+      'machine_name' => 'HkMagTermCountry',
+      'source_vocabulary' => '106', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'destination_vocabulary' => 'country',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_term_hk_area($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of hk area terms from Drupal 6'),
+      'machine_name' => 'HkMagTermHkArea',
+      'source_vocabulary' => '181', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'destination_vocabulary' => 'hk_area',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_term_macau_street($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of macau street terms from Drupal 6'),
+      'machine_name' => 'HkMagTermMacauStreet',
+      'source_vocabulary' => '252', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'destination_vocabulary' => 'macau_street',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
+
+
+function _hkmag_migrate_migrate_term_macau_area($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of macau area terms from Drupal 6'),
+      'machine_name' => 'HkMagTermMacauArea',
+      'source_vocabulary' => '253', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'destination_vocabulary' => 'macau_area',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
+
+
+function _hkmag_migrate_migrate_user($common_arguments) {
+  // The description and the migration machine name are also required arguments,
+  // which will be unique for each migration you register.
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of users from Drupal 6'),
+      'role_migration' => 'HkMagRoles',
+      'machine_name' => 'HkMagUsers',
+  );
+  
+  // We just use the migrate_d2d D6 migration class as-is.
+  Migration::registerMigration('DrupalUser6Migration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_role($common_arguments) {
+// //   $user_arguments = $common_arguments + array(
+// //       'description' => t('Migration of hkmag users from Drupal 6'),
+// //       'machine_name' => 'user',
+// //       'class_name' => 'MyUserMigrationClass',
+// //       'role_migration' => 'role_migration_machine_name',
+// //   );
+  
+// //   $this->addFieldMapping('roles', 'roles')
+// //     ->sourceMigration('role_migration_machine_name');
+  
+  $role_arguments = $common_arguments + array(
+    'machine_name' => 'HkMagRoles',
+    'description' => t('Import Drupal 6 roles'),
+    'role_mappings' => array(
+      'Admin' => 'Admin',
+      'Editor' => 'Editor',
+      'I.T. Admin' => 'I.T. Admin',
+      'Managing Editor' => 'Managing Editor',
+      'Marketing' => 'Marketing',
+      'Moderator' => 'Moderator',
+      'Premium Partner' => 'Premium Partner',
+      'STB' => 'STB',
+      'Sub Editor' => 'Sub Editor',
+      'Writer' => 'Writer',
+    ),
+  );
+  
+  Migration::registerMigration('DrupalRole6Migration', $role_arguments['machine_name'], $role_arguments);
+}
+
+function _hkmag_migrate_migrate_node_hotel($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of node type hotel from Drupal 6'),
+      'machine_name' => 'HkMagNodeHotel',
+      'source_type' => 'hotel',
+      'destination_type' => 'hotel',
+      'user_migration' => 'HkMagUsers',  //
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('HkmagNodeHotelMigration', $arguments['machine_name'],
+  $arguments);
+}
