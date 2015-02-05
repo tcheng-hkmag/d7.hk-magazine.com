@@ -93,6 +93,7 @@ features_exclude[dependencies][date] = date
 features_exclude[dependencies][node_reference] = node_reference
 features_exclude[dependencies][options] = options
 features_exclude[dependencies][taxonomy] = taxonomy
+features_exclude[dependencies][image] = image
 features_exclude[taxonomy][macau_area] = macau_area
 features_exclude[taxonomy][macau_street] = macau_street
 features_exclude[taxonomy][hk_streets] = hk_streets

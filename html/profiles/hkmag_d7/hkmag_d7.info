@@ -18,7 +18,7 @@ dependencies[] = taxonomy
 dependencies[] = dblog
 dependencies[] = search
 dependencies[] = shortcut
-dependencies[] = toolbar
+;dependencies[] = toolbar
 dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
@@ -44,6 +44,7 @@ dependencies[] = node_reference
 dependencies[] = location
 dependencies[] = location_cck
 dependencies[] = field_group
+dependencies[] = admin
 
 ; Required modules (Contrib) from Spark
 dependencies[] = breakpoints
@@ -57,7 +58,7 @@ dependencies[] = panels
 dependencies[] = panels_ipe
 dependencies[] = views
 dependencies[] = views_ui
-dependencies[] = simplified_menu_admin
+;dependencies[] = simplified_menu_admin
 
 ; Required projects (Sparkish)
 dependencies[] = ckeditor

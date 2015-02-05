@@ -80,6 +80,27 @@ class HkmagNodeHotelMigration extends DrupalNode6Migration {
     ->defaultValue('tid')
     ->sourceMigration('HkMagTermCountry');
     
+    $this->addFieldMapping('field_st_road_hk', 'field_st_road_hk')
+    ->sourceMigration('HkMagTermHkStreet'); // This is the machine name of the tags migration.
+    // This tells the migration to match on the term ID instead of the default, which is the term name.
+    $this->addFieldMapping('field_st_road_hk:source_type')
+    ->defaultValue('tid')
+    ->sourceMigration('HkMagTermHkStreet');
+    
+    $this->addFieldMapping('field_st_cross', 'field_st_cross')
+    ->sourceMigration('HkMagTermHkStreet'); // This is the machine name of the tags migration.
+    // This tells the migration to match on the term ID instead of the default, which is the term name.
+    $this->addFieldMapping('field_st_cross:source_type')
+    ->defaultValue('tid')
+    ->sourceMigration('HkMagTermHkStreet');
+    
+    $this->addFieldMapping('field_area_hk', 'field_area_hk')
+    ->sourceMigration('HkMagTermHkArea'); // This is the machine name of the tags migration.
+    // This tells the migration to match on the term ID instead of the default, which is the term name.
+    $this->addFieldMapping('field_area_hk:source_type')
+    ->defaultValue('tid')
+    ->sourceMigration('HkMagTermHkArea');
+       
     $this->addFieldMapping('field_area_ma', 'field_area_ma')
     ->sourceMigration('HkMagTermMacauArea'); // This is the machine name of the tags migration.
     // This tells the migration to match on the term ID instead of the default, which is the term name.
@@ -101,7 +122,19 @@ class HkmagNodeHotelMigration extends DrupalNode6Migration {
     ->defaultValue('tid')
     ->sourceMigration('HkMagTermMacauStreet');
     
-    
+    // for images field
+    $this->addFieldMapping('field_images', 'field_images')
+    ->sourceMigration('HkMagFile');
+    $this->addFieldMapping('field_images:file_class')
+    ->defaultValue('MigrateFileFid');
+    $this->addFieldMapping('field_images:preserve_files')
+    ->defaultValue(TRUE);
+    $this->addFieldMapping('field_images:title', 'field_images:description')
+    ->defaultValue('');
+//     $this->addFieldMapping('field_images:display', 'field_images:list');
+    $this->addFieldMapping('field_images:alt', 'field_images:alt');    
+    $this->addFieldMapping('field_images:language')
+    ->defaultValue(LANGUAGE_NONE);
   }
   
   public function sourceFieldList() {

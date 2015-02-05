@@ -98,7 +98,7 @@ function hkmag_hotel_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 14,
     ),
   );
 
@@ -186,7 +186,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 35,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -230,7 +230,7 @@ function hkmag_hotel_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'display_label' => 0,
+        'display_label' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 19,
@@ -277,7 +277,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -629,7 +629,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 10,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -685,14 +685,16 @@ function hkmag_hotel_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
+        'module' => 'image',
         'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
           'quickedit' => array(
             'editor' => 'form',
           ),
         ),
-        'type' => 'file_default',
-        'weight' => 4,
+        'type' => 'image',
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -704,21 +706,27 @@ function hkmag_hotel_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_images',
     'label' => 'Images',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'description_field' => 0,
+      'alt_field' => 1,
+      'default_image' => 0,
       'file_directory' => '',
-      'file_extensions' => 'txt',
+      'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'file',
+      'active' => 1,
+      'module' => 'image',
       'settings' => array(
+        'preview_image_style' => 'large',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
-      'weight' => 3,
+      'type' => 'image_image',
+      'weight' => 15,
     ),
   );
 
@@ -818,7 +826,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -862,7 +870,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -906,7 +914,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -995,7 +1003,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 10,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -1039,7 +1047,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 14,
+      'weight' => 13,
     ),
   );
 
@@ -1127,7 +1135,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -1171,7 +1179,7 @@ function hkmag_hotel_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 13,
+      'weight' => 12,
     ),
   );
 
@@ -1315,7 +1323,7 @@ function hkmag_hotel_field_default_field_instances() {
         ),
       ),
       'type' => 'stars',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 

@@ -47,6 +47,7 @@ function hkmag_migrate_flush_caches() {
 //   _devblog_migrate_files($common_arguments);
   _hkmag_migrate_migrate_term_country($common_arguments);
   _hkmag_migrate_migrate_term_hk_area($common_arguments);
+  _hkmag_migrate_migrate_term_hk_streets($common_arguments);
   _hkmag_migrate_migrate_term_place_cities($common_arguments);
   _hkmag_migrate_migrate_term_macau_street($common_arguments);
   _hkmag_migrate_migrate_term_macau_area($common_arguments);
@@ -54,8 +55,22 @@ function hkmag_migrate_flush_caches() {
   _hkmag_migrate_migrate_role($common_arguments);
   _hkmag_migrate_migrate_user($common_arguments);
   
+  _hkmag_migrate_migrate_file($common_arguments);
+  
   _hkmag_migrate_migrate_node_hotel($common_arguments);
   
+}
+
+function _hkmag_migrate_migrate_file($common_arguments) {
+  // File migration
+  $file_arguments = $common_arguments + array(
+      'description' => t('Migrate all files'),
+      'machine_name' => 'HkMagFile',
+      'source_dir' => '/Users/Timothy/Sites/hk-magazine.com/html',
+      'destination_dir' => '',
+  );
+  
+  Migration::registerMigration('DrupalFile6Migration', $file_arguments['machine_name'], $file_arguments);
 }
 
 function _hkmag_migrate_migrate_term_country($common_arguments) {
@@ -76,6 +91,18 @@ function _hkmag_migrate_migrate_term_hk_area($common_arguments) {
       'machine_name' => 'HkMagTermHkArea',
       'source_vocabulary' => '181', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
       'destination_vocabulary' => 'hk_area',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_term_hk_streets($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of hk streets terms from Drupal 6'),
+      'machine_name' => 'HkMagTermHkStreet',
+      'source_vocabulary' => '180', // vid of th e Drupal 6 ÒCategoriesÓ vocabulary
+      'destination_vocabulary' => 'hk_streets',
   );
   // First argument is the migration class name
   Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
