@@ -28,8 +28,8 @@ dependencies[] = ctools
 dependencies[] = strongarm
 dependencies[] = date_api
 dependencies[] = date
-;dependencies[] = views
-;dependencies[] = views_ui
+dependencies[] = views
+dependencies[] = views_ui
 dependencies[] = migrate
 dependencies[] = migrate_ui
 dependencies[] = migrate_d2d
@@ -41,10 +41,11 @@ dependencies[] = votingapi
 dependencies[] = fivestar
 dependencies[] = references
 dependencies[] = node_reference
+dependencies[] = user_reference
 dependencies[] = location
 dependencies[] = location_cck
 dependencies[] = field_group
-dependencies[] = admin
+dependencies[] = gmap
 
 ; Required modules (Contrib) from Spark
 dependencies[] = breakpoints
