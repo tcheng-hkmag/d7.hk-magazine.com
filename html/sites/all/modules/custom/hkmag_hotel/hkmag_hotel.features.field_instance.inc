@@ -730,6 +730,47 @@ function hkmag_hotel_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-hotel-field_location'
+  $field_instances['node-hotel-field_location'] = array(
+    'bundle' => 'hotel',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'location_cck',
+        'settings' => array(
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'location_all',
+        'weight' => 32,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_location',
+    'label' => 'Location',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'location_cck',
+      'settings' => array(),
+      'type' => 'location',
+      'weight' => 33,
+    ),
+  );
+
   // Exported field_instance: 'node-hotel-field_open_since'
   $field_instances['node-hotel-field_open_since'] = array(
     'bundle' => 'hotel',
@@ -1432,6 +1473,7 @@ function hkmag_hotel_field_default_field_instances() {
   t('Fax Number');
   t('Floor');
   t('Images');
+  t('Location');
   t('Macau Area');
   t('Macau Cross Street');
   t('Macau Street Name');
