@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Art Gallery feature.
+ */
+
+include_once 'hkmag_art_gallery.features.inc';
