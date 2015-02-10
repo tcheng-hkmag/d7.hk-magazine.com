@@ -9,6 +9,29 @@
  */
 function hkmag_vocab_taxonomy_default_vocabularies() {
   return array(
+    'art_style' => array(
+      'name' => 'Art Style',
+      'machine_name' => 'art_style',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'country' => array(
       'name' => 'Country',
       'machine_name' => 'country',
@@ -104,6 +127,29 @@ function hkmag_vocab_taxonomy_default_vocabularies() {
     'macau_street' => array(
       'name' => 'Macau Street',
       'machine_name' => 'macau_street',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
+    'payment_accepted' => array(
+      'name' => 'Payment Accepted',
+      'machine_name' => 'payment_accepted',
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',

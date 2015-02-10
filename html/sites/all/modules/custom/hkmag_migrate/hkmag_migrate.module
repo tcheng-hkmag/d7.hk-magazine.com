@@ -51,6 +51,8 @@ function hkmag_migrate_flush_caches() {
   _hkmag_migrate_migrate_term_place_cities($common_arguments);
   _hkmag_migrate_migrate_term_macau_street($common_arguments);
   _hkmag_migrate_migrate_term_macau_area($common_arguments);
+  _hkmag_migrate_migrate_term_art_style($common_arguments);
+  _hkmag_migrate_migrate_term_payment_accepted($common_arguments);
   
   _hkmag_migrate_migrate_role($common_arguments);
   _hkmag_migrate_migrate_user($common_arguments);
@@ -58,6 +60,7 @@ function hkmag_migrate_flush_caches() {
   _hkmag_migrate_migrate_file($common_arguments);
   
   _hkmag_migrate_migrate_node_hotel($common_arguments);
+  _hkmag_migrate_migrate_node_art_gallery($common_arguments);
   
 }
 
@@ -146,6 +149,29 @@ function _hkmag_migrate_migrate_term_macau_area($common_arguments) {
   $arguments);
 }
 
+function _hkmag_migrate_migrate_term_art_style($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of art style terms from Drupal 6'),
+      'machine_name' => 'HkMagTermArtStyle',
+      'source_vocabulary' => '147', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'destination_vocabulary' => 'art_style',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_term_payment_accepted($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of payment accepted terms from Drupal 6'),
+      'machine_name' => 'HkMagTermPaymentAccepted',
+      'source_vocabulary' => '9', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'destination_vocabulary' => 'payment_accepted',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
 
 function _hkmag_migrate_migrate_user($common_arguments) {
   // The description and the migration machine name are also required arguments,
@@ -202,5 +228,18 @@ function _hkmag_migrate_migrate_node_hotel($common_arguments) {
   );
   // First argument is the migration class name
   Migration::registerMigration('HkmagNodeHotelMigration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_node_art_gallery($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of node type art gallery from Drupal 6'),
+      'machine_name' => 'HkMagNodeArtGallery',
+      'source_type' => 'art_gallery',
+      'destination_type' => 'art_gallery',
+      'user_migration' => 'HkMagUsers',  //
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('HkmagNodeArtGalleryMigration', $arguments['machine_name'],
   $arguments);
 }
