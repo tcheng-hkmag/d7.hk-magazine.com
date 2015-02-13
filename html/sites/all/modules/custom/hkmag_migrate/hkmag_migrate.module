@@ -53,6 +53,7 @@ function hkmag_migrate_flush_caches() {
   _hkmag_migrate_migrate_term_macau_area($common_arguments);
   _hkmag_migrate_migrate_term_art_style($common_arguments);
   _hkmag_migrate_migrate_term_payment_accepted($common_arguments);
+  _hkmag_migrate_migrate_term_tags($common_arguments);
   
   _hkmag_migrate_migrate_role($common_arguments);
   _hkmag_migrate_migrate_user($common_arguments);
@@ -167,6 +168,18 @@ function _hkmag_migrate_migrate_term_payment_accepted($common_arguments) {
       'machine_name' => 'HkMagTermPaymentAccepted',
       'source_vocabulary' => '9', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
       'destination_vocabulary' => 'payment_accepted',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_term_tags($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of tags terms from Drupal 6'),
+      'machine_name' => 'HkMagTermTags',
+      'source_vocabulary' => '3', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'destination_vocabulary' => 'tags',
   );
   // First argument is the migration class name
   Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
