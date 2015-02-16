@@ -937,6 +937,47 @@ function hkmag_art_gallery_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-art_gallery-field_location'
+  $field_instances['node-art_gallery-field_location'] = array(
+    'bundle' => 'art_gallery',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'location_cck',
+        'settings' => array(
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'location_default',
+        'weight' => 81,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_location',
+    'label' => 'Location',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'location_cck',
+      'settings' => array(),
+      'type' => 'location',
+      'weight' => 56,
+    ),
+  );
+
   // Exported field_instance: 'node-art_gallery-field_main_image'
   $field_instances['node-art_gallery-field_main_image'] = array(
     'bundle' => 'art_gallery',
@@ -2509,6 +2550,7 @@ function hkmag_art_gallery_field_default_field_instances() {
   t('Issue Date');
   t('Last Fact Check');
   t('Last Reviewed');
+  t('Location');
   t('Macau Area');
   t('Macau Cross Street');
   t('Macau Street Name');

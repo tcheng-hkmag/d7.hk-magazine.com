@@ -342,16 +342,16 @@ class HkmagNodeArtGalleryMigration extends DrupalNode6Migration {
     ->defaultValue(LANGUAGE_NONE);
     
 //     // for location field
-//     $this->addFieldMapping('field_location:name', 'name');
-//     $this->addFieldMapping('field_location:street', 'street');
-//     $this->addFieldMapping('field_location:additional', 'additional');
-//     $this->addFieldMapping('field_location:city', 'city');
-//     $this->addFieldMapping('field_location:province', 'province');
-//     $this->addFieldMapping('field_location:postal_code', 'postal_code');
-//     $this->addFieldMapping('field_location:country', 'country');
-//     $this->addFieldMapping('field_location:latitude', 'latitude');
-//     $this->addFieldMapping('field_location:longitude', 'longitude');
-//     $this->addFieldMapping('field_location:source', 'source');
+    $this->addFieldMapping('field_location:name', 'name');
+    $this->addFieldMapping('field_location:street', 'street');
+    $this->addFieldMapping('field_location:additional', 'additional');
+    $this->addFieldMapping('field_location:city', 'city');
+    $this->addFieldMapping('field_location:province', 'province');
+    $this->addFieldMapping('field_location:postal_code', 'postal_code');
+    $this->addFieldMapping('field_location:country', 'country');
+    $this->addFieldMapping('field_location:latitude', 'latitude');
+    $this->addFieldMapping('field_location:longitude', 'longitude');
+    $this->addFieldMapping('field_location:source', 'source');
 
   }
 

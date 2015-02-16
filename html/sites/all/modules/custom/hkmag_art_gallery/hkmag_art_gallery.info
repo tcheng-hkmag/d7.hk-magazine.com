@@ -64,6 +64,7 @@ features[field_instance][] = node-art_gallery-field_images
 features[field_instance][] = node-art_gallery-field_issue_date
 features[field_instance][] = node-art_gallery-field_last_fact_check
 features[field_instance][] = node-art_gallery-field_last_reviewed
+features[field_instance][] = node-art_gallery-field_location
 features[field_instance][] = node-art_gallery-field_main_image
 features[field_instance][] = node-art_gallery-field_open_since
 features[field_instance][] = node-art_gallery-field_payment_accepted
