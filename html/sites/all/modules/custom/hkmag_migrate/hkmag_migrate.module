@@ -196,20 +196,11 @@ function _hkmag_migrate_migrate_user($common_arguments) {
   );
   
   // We just use the migrate_d2d D6 migration class as-is.
-  Migration::registerMigration('DrupalUser6Migration', $arguments['machine_name'],
+  Migration::registerMigration('HkmagNodeUserMigration', $arguments['machine_name'],
   $arguments);
 }
 
 function _hkmag_migrate_migrate_role($common_arguments) {
-// //   $user_arguments = $common_arguments + array(
-// //       'description' => t('Migration of hkmag users from Drupal 6'),
-// //       'machine_name' => 'user',
-// //       'class_name' => 'MyUserMigrationClass',
-// //       'role_migration' => 'role_migration_machine_name',
-// //   );
-  
-// //   $this->addFieldMapping('roles', 'roles')
-// //     ->sourceMigration('role_migration_machine_name');
   
   $role_arguments = $common_arguments + array(
     'machine_name' => 'HkMagRoles',
