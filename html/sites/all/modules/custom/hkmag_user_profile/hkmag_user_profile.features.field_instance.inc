@@ -755,6 +755,47 @@ function hkmag_user_profile_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_tos'
+  $field_instances['user-user-field_tos'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'quickedit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'list_default',
+        'weight' => 22,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_tos',
+    'label' => 'I agree',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 33,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_url'
   $field_instances['user-user-field_url'] = array(
     'bundle' => 'user',
@@ -843,6 +884,7 @@ function hkmag_user_profile_field_default_field_instances() {
   t('Hand phone');
   t('Hong Kong');
   t('How long have you lived in the country');
+  t('I agree');
   t('Interests');
   t('Last Name');
   t('Monthly Income');
