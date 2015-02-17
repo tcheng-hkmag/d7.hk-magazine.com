@@ -30,7 +30,7 @@ class HkmagNodeUserMigration extends DrupalUser6Migration {
     
     
     // date field
-    $this->addFieldMapping('field_birthdate', 'profile_lastname');
+    $this->addFieldMapping('field_birthdate', 'profile_birthdate');
     $this->addFieldMapping('field_birthdate:timezone')
     ->defaultValue('Asia/Hong_Kong');
     
