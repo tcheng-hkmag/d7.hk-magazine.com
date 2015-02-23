@@ -764,7 +764,7 @@ function hkmag_user_profile_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'By registering for this site you agree to our Terms Of Service and Privacy Policy.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -874,6 +874,7 @@ function hkmag_user_profile_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('By registering for this site you agree to our Terms Of Service and Privacy Policy.');
   t('City');
   t('Country');
   t('Country of Origin');
