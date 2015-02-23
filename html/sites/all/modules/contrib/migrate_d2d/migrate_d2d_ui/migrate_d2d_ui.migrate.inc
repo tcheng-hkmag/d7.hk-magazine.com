@@ -285,9 +285,15 @@ class MigrateD2DWizard extends MigrateUIWizard {
         $site_name = unserialize($site_name);
         if ($site_name) {
           $this->groupTitle = $site_name;
+          if (function_exists('transliteration_get')) {
+            $site_name = transliteration_get($site_name);
+          }
           $this->groupName = preg_replace('/[^A-Za-z0-9]/', '', $site_name);
           if (strlen($this->groupName) > 9) {
             $this->groupName = substr(md5($this->groupName), 0, 9);
+          }
+          elseif (empty($this->groupName)) {
+            $this->groupName = substr(md5($site_name), 0, 9);
           }
         }
         else {

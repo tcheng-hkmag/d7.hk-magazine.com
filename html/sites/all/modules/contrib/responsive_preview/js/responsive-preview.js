@@ -446,7 +446,7 @@ Drupal.responsivePreview = Drupal.responsivePreview || {
       var dir = this.envModel.get('dir');
       var edge = (dir === 'rtl') ? 'left' : 'right';
       this.$el
-        .find('.responsive-preview-options')
+        .find('.item-list')
         .position_responsive_preview({
           'my': edge +' top',
           'at': edge + ' bottom',
