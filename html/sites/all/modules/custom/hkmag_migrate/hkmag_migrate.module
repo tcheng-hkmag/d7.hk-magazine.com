@@ -46,6 +46,9 @@ function hkmag_migrate_flush_caches() {
 //   _devblog_migrate_users($common_arguments);
 //   _devblog_migrate_files($common_arguments);
   _hkmag_migrate_migrate_term_country($common_arguments);
+  _hkmag_migrate_migrate_term_topics($common_arguments);
+  _hkmag_migrate_migrate_term_type($common_arguments);
+  _hkmag_migrate_migrate_term_author($common_arguments);
   _hkmag_migrate_migrate_term_hk_area($common_arguments);
   _hkmag_migrate_migrate_term_hk_streets($common_arguments);
   _hkmag_migrate_migrate_term_place_cities($common_arguments);
@@ -83,6 +86,42 @@ function _hkmag_migrate_migrate_term_country($common_arguments) {
       'machine_name' => 'HkMagTermCountry',
       'source_vocabulary' => '106', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
       'destination_vocabulary' => 'country',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_term_topics($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of topics terms from Drupal 6'),
+      'machine_name' => 'HkMagTermTopics',
+      'source_vocabulary' => '170', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'destination_vocabulary' => 'topics',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_term_type($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of type terms from Drupal 6'),
+      'machine_name' => 'HkMagTermType',
+      'source_vocabulary' => '171', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'destination_vocabulary' => 'type',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_term_author($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of author terms from Drupal 6'),
+      'machine_name' => 'HkMagTermAuthor',
+      'source_vocabulary' => '152', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'destination_vocabulary' => 'author',
   );
   // First argument is the migration class name
   Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
