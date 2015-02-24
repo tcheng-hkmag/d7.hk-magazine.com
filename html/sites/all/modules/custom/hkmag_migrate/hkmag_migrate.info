@@ -13,5 +13,7 @@ dependencies[] = list
 dependencies[] = number
 
 files[] = hkmag_migrate.role.inc
-files[] = hkmag_migrate.node.inc
+files[] = hkmag_migrate.node.hotel.inc
+files[] = hkmag_migrate.node.art_gallery.inc
+files[] = hkmag_migrate.node.article.inc
 files[] = hkmag_migrate.user.inc

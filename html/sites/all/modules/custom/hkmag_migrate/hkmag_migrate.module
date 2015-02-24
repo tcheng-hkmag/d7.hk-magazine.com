@@ -65,6 +65,7 @@ function hkmag_migrate_flush_caches() {
   
   _hkmag_migrate_migrate_node_hotel($common_arguments);
   _hkmag_migrate_migrate_node_art_gallery($common_arguments);
+  _hkmag_migrate_migrate_node_article($common_arguments);
   
 }
 
@@ -284,5 +285,18 @@ function _hkmag_migrate_migrate_node_art_gallery($common_arguments) {
   );
   // First argument is the migration class name
   Migration::registerMigration('HkmagNodeArtGalleryMigration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_node_article($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of node type article from Drupal 6'),
+      'machine_name' => 'HkMagNodeArticle',
+      'source_type' => 'articles',
+      'destination_type' => 'article',
+      'user_migration' => 'HkMagUsers',  //
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('HkmagNodeArticleMigration', $arguments['machine_name'],
   $arguments);
 }
