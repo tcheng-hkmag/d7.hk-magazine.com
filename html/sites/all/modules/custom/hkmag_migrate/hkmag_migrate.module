@@ -67,6 +67,7 @@ function hkmag_migrate_flush_caches() {
   _hkmag_migrate_migrate_node_art_gallery($common_arguments);
   _hkmag_migrate_migrate_node_article($common_arguments);
   _hkmag_migrate_migrate_node_column_name($common_arguments);
+  _hkmag_migrate_migrate_node_column_article($common_arguments);
   
 }
 
@@ -304,7 +305,7 @@ function _hkmag_migrate_migrate_node_article($common_arguments) {
 
 function _hkmag_migrate_migrate_node_column_name($common_arguments) {
   $arguments = $common_arguments + array(
-      'description' => t('Migration of node type column from Drupal 6'),
+      'description' => t('Migration of node type column name from Drupal 6'),
       'machine_name' => 'HkMagNodeColumnName',
       'source_type' => 'column_name',
       'destination_type' => 'column_name',
@@ -312,5 +313,18 @@ function _hkmag_migrate_migrate_node_column_name($common_arguments) {
   );
   // First argument is the migration class name
   Migration::registerMigration('HkmagNodeColumnNameMigration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_node_column_article($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of node type column article from Drupal 6'),
+      'machine_name' => 'HkMagNodeColumnArticle',
+      'source_type' => 'column_article',
+      'destination_type' => 'column_article',
+      'user_migration' => 'HkMagUsers',  //
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('HkmagNodeColumnArticleMigration', $arguments['machine_name'],
   $arguments);
 }
