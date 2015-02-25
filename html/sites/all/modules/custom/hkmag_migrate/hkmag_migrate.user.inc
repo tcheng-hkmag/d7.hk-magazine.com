@@ -46,6 +46,15 @@ class HkmagNodeUserMigration extends DrupalUser6Migration {
     return $fields;
   }
   
+  protected function query() {
+    // Get the default query (all rows in the users table other than uid 1)
+    $query = parent::query();
+    // Exclude test accounts
+    $query->condition('access', '0', '!=');
+
+    return $query;
+  }
+  
 }
 
 
