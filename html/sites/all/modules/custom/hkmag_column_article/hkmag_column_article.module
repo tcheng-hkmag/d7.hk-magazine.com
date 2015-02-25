@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Column Article feature.
+ */
+
+include_once 'hkmag_column_article.features.inc';
