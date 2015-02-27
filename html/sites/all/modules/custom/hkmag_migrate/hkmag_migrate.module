@@ -57,6 +57,7 @@ function hkmag_migrate_flush_caches() {
   _hkmag_migrate_migrate_term_art_style($common_arguments);
   _hkmag_migrate_migrate_term_payment_accepted($common_arguments);
   _hkmag_migrate_migrate_term_tags($common_arguments);
+  _hkmag_migrate_migrate_term_bar_ambiance($common_arguments);
   
   _hkmag_migrate_migrate_role($common_arguments);
   _hkmag_migrate_migrate_user($common_arguments);
@@ -227,6 +228,20 @@ function _hkmag_migrate_migrate_term_tags($common_arguments) {
   Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
   $arguments);
 }
+
+function _hkmag_migrate_migrate_term_bar_ambiance($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of bar ambiance terms from Drupal 6'),
+      'machine_name' => 'HkMagTermBarAmbiance',
+      'source_vocabulary' => '145', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'destination_vocabulary' => 'bar_ambiance',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
+($common_arguments);
+
 
 function _hkmag_migrate_migrate_user($common_arguments) {
   // The description and the migration machine name are also required arguments,

@@ -9,6 +9,7 @@ dependencies[] = taxonomy
 features[features_api][] = api:2
 features[taxonomy][] = art_style
 features[taxonomy][] = author
+features[taxonomy][] = bar_ambiance
 features[taxonomy][] = country
 features[taxonomy][] = hk_area
 features[taxonomy][] = hk_streets
