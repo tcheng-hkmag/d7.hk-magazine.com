@@ -86,10 +86,12 @@ class HkmagNodeArtGalleryMigration extends DrupalNode6Migration {
     $this->addFieldMapping('field_set_day_to_4', 'field_set_day_to_4');
     
     // node reference field
-    //$this->addFieldMapping('field_related_hotel', 'field_related_hotel');
+    $this->addFieldMapping('field_related_hotel', 'field_related_hotel')
+    ->sourceMigration('HkMagNodeHotel');
     
     // user reference field
-    //$this->addFieldMapping('field_fact_checked_by', 'field_fact_checked_by');
+    $this->addFieldMapping('field_fact_checked_by', 'field_fact_checked_by')
+    ->sourceMigration('HkMagUsers');
     
     
 
