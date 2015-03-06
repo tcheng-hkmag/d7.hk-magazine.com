@@ -69,6 +69,7 @@ function hkmag_migrate_flush_caches() {
   _hkmag_migrate_migrate_node_article($common_arguments);
   _hkmag_migrate_migrate_node_column_name($common_arguments);
   _hkmag_migrate_migrate_node_column_article($common_arguments);
+  _hkmag_migrate_migrate_node_bar($common_arguments);
   
 }
 
@@ -341,5 +342,18 @@ function _hkmag_migrate_migrate_node_column_article($common_arguments) {
   );
   // First argument is the migration class name
   Migration::registerMigration('HkmagNodeColumnArticleMigration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_node_bar($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of node type bar from Drupal 6'),
+      'machine_name' => 'HkMagNodeBar',
+      'source_type' => 'bar',
+      'destination_type' => 'bar',
+      'user_migration' => 'HkMagUsers',  //
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('HkmagNodeBarMigration', $arguments['machine_name'],
   $arguments);
 }

@@ -99,7 +99,7 @@ function hkmag_art_gallery_field_default_field_bases() {
     'module' => 'user_reference',
     'settings' => array(
       'referenceable_roles' => array(
-        2 => 0,
+        2 => 2,
         3 => 0,
         4 => 0,
         5 => 0,
@@ -115,7 +115,7 @@ function hkmag_art_gallery_field_default_field_bases() {
       ),
       'referenceable_status' => array(
         0 => 0,
-        1 => 0,
+        1 => 1,
       ),
       'view' => array(
         'args' => array(),
