@@ -58,6 +58,7 @@ function hkmag_migrate_flush_caches() {
   _hkmag_migrate_migrate_term_payment_accepted($common_arguments);
   _hkmag_migrate_migrate_term_tags($common_arguments);
   _hkmag_migrate_migrate_term_bar_ambiance($common_arguments);
+  _hkmag_migrate_migrate_term_vacation_type($common_arguments);
   
   _hkmag_migrate_migrate_role($common_arguments);
   _hkmag_migrate_migrate_user($common_arguments);
@@ -89,7 +90,7 @@ function _hkmag_migrate_migrate_term_country($common_arguments) {
   $arguments = $common_arguments + array(
       'description' => t('Migration of country terms from Drupal 6'),
       'machine_name' => 'HkMagTermCountry',
-      'source_vocabulary' => '106', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'source_vocabulary' => '106', // vid of the Drupal 6 ï¿½Categoriesï¿½ vocabulary
       'destination_vocabulary' => 'country',
   );
   // First argument is the migration class name
@@ -101,7 +102,7 @@ function _hkmag_migrate_migrate_term_topics($common_arguments) {
   $arguments = $common_arguments + array(
       'description' => t('Migration of topics terms from Drupal 6'),
       'machine_name' => 'HkMagTermTopics',
-      'source_vocabulary' => '170', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'source_vocabulary' => '170', // vid of the Drupal 6 ï¿½Categoriesï¿½ vocabulary
       'destination_vocabulary' => 'topics',
   );
   // First argument is the migration class name
@@ -113,7 +114,7 @@ function _hkmag_migrate_migrate_term_type($common_arguments) {
   $arguments = $common_arguments + array(
       'description' => t('Migration of type terms from Drupal 6'),
       'machine_name' => 'HkMagTermType',
-      'source_vocabulary' => '171', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'source_vocabulary' => '171', // vid of the Drupal 6 ï¿½Categoriesï¿½ vocabulary
       'destination_vocabulary' => 'type',
   );
   // First argument is the migration class name
@@ -125,7 +126,7 @@ function _hkmag_migrate_migrate_term_author($common_arguments) {
   $arguments = $common_arguments + array(
       'description' => t('Migration of author terms from Drupal 6'),
       'machine_name' => 'HkMagTermAuthor',
-      'source_vocabulary' => '152', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'source_vocabulary' => '152', // vid of the Drupal 6 ï¿½Categoriesï¿½ vocabulary
       'destination_vocabulary' => 'author',
   );
   // First argument is the migration class name
@@ -137,7 +138,7 @@ function _hkmag_migrate_migrate_term_hk_area($common_arguments) {
   $arguments = $common_arguments + array(
       'description' => t('Migration of hk area terms from Drupal 6'),
       'machine_name' => 'HkMagTermHkArea',
-      'source_vocabulary' => '181', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'source_vocabulary' => '181', // vid of the Drupal 6 ï¿½Categoriesï¿½ vocabulary
       'destination_vocabulary' => 'hk_area',
   );
   // First argument is the migration class name
@@ -149,7 +150,7 @@ function _hkmag_migrate_migrate_term_hk_streets($common_arguments) {
   $arguments = $common_arguments + array(
       'description' => t('Migration of hk streets terms from Drupal 6'),
       'machine_name' => 'HkMagTermHkStreet',
-      'source_vocabulary' => '180', // vid of th e Drupal 6 ÒCategoriesÓ vocabulary
+      'source_vocabulary' => '180', // vid of th e Drupal 6 ï¿½Categoriesï¿½ vocabulary
       'destination_vocabulary' => 'hk_streets',
   );
   // First argument is the migration class name
@@ -161,7 +162,7 @@ function _hkmag_migrate_migrate_term_place_cities($common_arguments) {
   $arguments = $common_arguments + array(
       'description' => t('Migration of hk area terms from Drupal 6'),
       'machine_name' => 'HkMagTermPlaceCities',
-      'source_vocabulary' => '160', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'source_vocabulary' => '160', // vid of the Drupal 6 ï¿½Categoriesï¿½ vocabulary
       'destination_vocabulary' => 'place_cities',
   );
   // First argument is the migration class name
@@ -173,7 +174,7 @@ function _hkmag_migrate_migrate_term_macau_street($common_arguments) {
   $arguments = $common_arguments + array(
       'description' => t('Migration of macau street terms from Drupal 6'),
       'machine_name' => 'HkMagTermMacauStreet',
-      'source_vocabulary' => '252', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'source_vocabulary' => '252', // vid of the Drupal 6 ï¿½Categoriesï¿½ vocabulary
       'destination_vocabulary' => 'macau_street',
   );
   // First argument is the migration class name
@@ -186,7 +187,7 @@ function _hkmag_migrate_migrate_term_macau_area($common_arguments) {
   $arguments = $common_arguments + array(
       'description' => t('Migration of macau area terms from Drupal 6'),
       'machine_name' => 'HkMagTermMacauArea',
-      'source_vocabulary' => '253', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'source_vocabulary' => '253', // vid of the Drupal 6 ï¿½Categoriesï¿½ vocabulary
       'destination_vocabulary' => 'macau_area',
   );
   // First argument is the migration class name
@@ -198,7 +199,7 @@ function _hkmag_migrate_migrate_term_art_style($common_arguments) {
   $arguments = $common_arguments + array(
       'description' => t('Migration of art style terms from Drupal 6'),
       'machine_name' => 'HkMagTermArtStyle',
-      'source_vocabulary' => '147', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'source_vocabulary' => '147', // vid of the Drupal 6 ï¿½Categoriesï¿½ vocabulary
       'destination_vocabulary' => 'art_style',
   );
   // First argument is the migration class name
@@ -210,7 +211,7 @@ function _hkmag_migrate_migrate_term_payment_accepted($common_arguments) {
   $arguments = $common_arguments + array(
       'description' => t('Migration of payment accepted terms from Drupal 6'),
       'machine_name' => 'HkMagTermPaymentAccepted',
-      'source_vocabulary' => '9', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'source_vocabulary' => '9', // vid of the Drupal 6 ï¿½Categoriesï¿½ vocabulary
       'destination_vocabulary' => 'payment_accepted',
   );
   // First argument is the migration class name
@@ -222,7 +223,7 @@ function _hkmag_migrate_migrate_term_tags($common_arguments) {
   $arguments = $common_arguments + array(
       'description' => t('Migration of tags terms from Drupal 6'),
       'machine_name' => 'HkMagTermTags',
-      'source_vocabulary' => '3', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'source_vocabulary' => '3', // vid of the Drupal 6 ï¿½Categoriesï¿½ vocabulary
       'destination_vocabulary' => 'tags',
   );
   // First argument is the migration class name
@@ -234,14 +235,25 @@ function _hkmag_migrate_migrate_term_bar_ambiance($common_arguments) {
   $arguments = $common_arguments + array(
       'description' => t('Migration of bar ambiance terms from Drupal 6'),
       'machine_name' => 'HkMagTermBarAmbiance',
-      'source_vocabulary' => '145', // vid of the Drupal 6 ÒCategoriesÓ vocabulary
+      'source_vocabulary' => '145', // vid of the Drupal 6 ï¿½Categoriesï¿½ vocabulary
       'destination_vocabulary' => 'bar_ambiance',
   );
   // First argument is the migration class name
   Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
   $arguments);
 }
-($common_arguments);
+
+function _hkmag_migrate_migrate_term_vacation_type($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of vacation type terms from Drupal 6'),
+      'machine_name' => 'HkMagTermVacationType',
+      'source_vocabulary' => '175', // vid of the Drupal 6 ï¿½Categoriesï¿½ vocabulary
+      'destination_vocabulary' => 'vacation_type',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
 
 
 function _hkmag_migrate_migrate_user($common_arguments) {
