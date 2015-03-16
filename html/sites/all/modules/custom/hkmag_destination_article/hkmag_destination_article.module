@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Destination Article feature.
+ */
+
+include_once 'hkmag_destination_article.features.inc';
