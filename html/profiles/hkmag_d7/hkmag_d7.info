@@ -46,6 +46,7 @@ dependencies[] = location
 dependencies[] = location_cck
 dependencies[] = field_group
 dependencies[] = gmap
+dependencies[] = diff
 
 ; Required modules (Contrib) from Spark
 dependencies[] = breakpoints

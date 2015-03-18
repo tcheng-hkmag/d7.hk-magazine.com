@@ -434,7 +434,8 @@ function hkmag_d7_install() {
   variable_set('node_admin_theme', '1');
   
   // enabling module at the end of the module process otherwise will throw error
-  module_enable(array('hkmag_vocab','hkmag_hotel','hkmag_art_gallery','hkmag_article','hkmag_column_name','hkmag_column_article','hkmag_bar','hkmag_user_profile','hkmag_gmap_settings'));
+  module_enable(array('hkmag_vocab','hkmag_hotel','hkmag_art_gallery','hkmag_article','hkmag_column_name',
+    'hkmag_column_article','hkmag_bar','hkmag_destination_article','hkmag_user_profile','hkmag_gmap_settings'));
 }
 
 
