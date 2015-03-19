@@ -15,6 +15,7 @@ features[taxonomy][] = hk_area
 features[taxonomy][] = hk_streets
 features[taxonomy][] = macau_area
 features[taxonomy][] = macau_street
+features[taxonomy][] = original_publication
 features[taxonomy][] = payment_accepted
 features[taxonomy][] = place_cities
 features[taxonomy][] = tags

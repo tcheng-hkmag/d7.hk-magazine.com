@@ -59,6 +59,7 @@ function hkmag_migrate_flush_caches() {
   _hkmag_migrate_migrate_term_tags($common_arguments);
   _hkmag_migrate_migrate_term_bar_ambiance($common_arguments);
   _hkmag_migrate_migrate_term_vacation_type($common_arguments);
+  _hkmag_migrate_migrate_term_original_publication($common_arguments);
   
   _hkmag_migrate_migrate_role($common_arguments);
   _hkmag_migrate_migrate_user($common_arguments);
@@ -249,6 +250,18 @@ function _hkmag_migrate_migrate_term_vacation_type($common_arguments) {
       'machine_name' => 'HkMagTermVacationType',
       'source_vocabulary' => '175', // vid of the Drupal 6 �Categories� vocabulary
       'destination_vocabulary' => 'vacation_type',
+  );
+  // First argument is the migration class name
+  Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
+  $arguments);
+}
+
+function _hkmag_migrate_migrate_term_original_publication($common_arguments) {
+  $arguments = $common_arguments + array(
+      'description' => t('Migration of vacation type terms from Drupal 6'),
+      'machine_name' => 'HkMagTermOriginalPublication',
+      'source_vocabulary' => '183', // vid of the Drupal 6 �Categories� vocabulary
+      'destination_vocabulary' => 'original_publication',
   );
   // First argument is the migration class name
   Migration::registerMigration('DrupalTerm6Migration', $arguments['machine_name'],
